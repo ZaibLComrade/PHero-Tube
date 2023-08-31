@@ -22,7 +22,9 @@
 				colors: {
 					"custom-black": "#252525",
 					"custom-red": "#FF1F3D",
-					"custom-grey-1": "#17171720"
+					"custom-grey-1": "#25252520",
+					"custom-grey-2": "#17171720",
+					"custom-grey-3": "#25252570"
 				}
 			}
 		}
@@ -40,15 +42,23 @@
 
 			<!-- Button -->
 			<div>
-				<button class="btn px-5 py-2 normal-case text-custom-black text-lg font-medium">Sort By View</button>
+				<button class="btn px-5 py-2 bg-custom-grey-1 normal-case text-custom-black text-lg font-medium">Sort By View</button>
 			</div>
 
 			<!-- QnA Blog -->
-			<div class="btn font-medium text-white border-0 text-lg px-5 py-2 normal-case bg-custom-red">Blog</div>
+			<div class="btn font-medium hover:bg-custom-red text-white  border-custom-red text-lg px-5 py-2 normal-case bg-custom-red">Blog</div>
 		</section>
 		<hr class="border-custom-grey-1">
 	</header>
-	<main></main>
+	<main class="container mx-auto">
+		<section class="flex justify-center gap-6 mt-8">
+
+			<div><button id="all-button" class="btn">All</button></div>
+			<div><button id="music-button" class="btn">Music</button></div>
+			<div><button id="comedy-button" class="btn">Comedy</button></div>
+			<div><button id="drawing-button" class="btn">Drawing</button></div>
+		</section>	
+	</main>
 
 
 	<script src="./scripts/main.js"></script>
