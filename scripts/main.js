@@ -20,7 +20,7 @@ btnArr.forEach(elem => {
 	})
 })
 
-// Fetch API
+// Fetch Category API
 async function fetchCategoryAPI() {
 	const response = await fetch("https://openapi.programming-hero.com/api/videos/categories")
 	const resource = await response.json();
@@ -30,4 +30,13 @@ async function fetchCategoryAPI() {
 	console.log(resource);
 }
 
+// Fetch Data API
+async function fetchDataAPI(id) {
+	const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+	const resource = await response.json();
+	console.log(resource);
+}
+
+// Testing API
 fetchCategoryAPI()
+fetchDataAPI(1000);
