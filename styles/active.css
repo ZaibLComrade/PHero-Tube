@@ -1,0 +1,14 @@
+:root {
+	--custom-red: #FF1F3D;
+}
+
+.active {
+	background-color: var(--custom-red);
+	font-size: 18px;
+	font-weight: 600;
+	border-color: var(--custom-red);
+	color: white;
+}
+.active:hover {
+	background-color: var(--custom-red);
+}
