@@ -19,3 +19,15 @@ btnArr.forEach(elem => {
 		})
 	})
 })
+
+// Fetch API
+async function fetchCategoryAPI() {
+	const response = await fetch("https://openapi.programming-hero.com/api/videos/categories")
+	const resource = await response.json();
+	if(!resource.status) {
+		console.log("Error loading api") // Work on it later
+	}
+	console.log(resource);
+}
+
+fetchCategoryAPI()
