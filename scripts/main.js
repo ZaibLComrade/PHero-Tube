@@ -92,7 +92,13 @@ function displayCard(dataList) {
 		// console.log(data.authors[0].profile_name);
 		// console.log(data.authors[0].verified);
 		// console.log(data.others.views);
-		console.log(data.others.posted_date);
+		// console.log(data.others.posted_date);
+		
+		// Converting Seconds to hours and minutes
+		const sec = data.others.posted_date;
+		let min = Math.floor(sec / 60);
+		const hours = Math.floor(min / 60);
+		min = min - hours * 60;	
 
 		const card = document.createElement("div");
 		card.innerHTML = `
@@ -100,7 +106,7 @@ function displayCard(dataList) {
 					<!-- Video -->
 					<figure class="rounded-lg relative h-[200px]">
 						<img src="${data.thumbnail}" class="h-full w-full object-cover" alt="Shoes" />
-						<div class="absolute">SEC</div>
+						<div class="absolute bg-custom-black-2 bottom-3 p-1 right-3 text-white text-[10px] rounded-[4px] ${sec ? "block" : "hidden"}">${hours}hrs ${min}mins ago</div>
 					</figure>
 
 					<!-- Information -->
