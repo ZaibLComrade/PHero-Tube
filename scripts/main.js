@@ -24,8 +24,14 @@ fetchCategoryAPI()
 async function fetchDataAPI(id) {
 	const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
 	const resource = await response.json();
+	
+	// Error Handling
+	const err = document.getElementById("error");
 	if(!resource.status) {
-		console.log("Error loading api") // Work on it later
+		err.classList.remove("hidden");
+	} else {
+		err.classList.add("hidden");
+		// Display cards
 	}
 	console.log(resource);
 }
@@ -44,7 +50,6 @@ function activateBtn(id) {
 					inElem.classList.remove("active");
 				}
 			})
-
 			// Fetch data API on button click
 			fetchDataAPI(id);
 		})
@@ -68,4 +73,8 @@ function addBtnEvents(data) {
 			fetchDataAPI(data[i].category_id);
 		})	
 	}
+}
+
+function displayCard(dataObj) {
+	
 }
