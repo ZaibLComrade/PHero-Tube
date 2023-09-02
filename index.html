@@ -37,19 +37,21 @@
 </head>
 <body class="font-inter">
 	<header class="container mx-auto">
-		<section class="flex mt-12 mb-8 justify-between">
+		<section class="md:flex grid gap-4 grid-cols-2 mt-12 mb-8 justify-between">
 			<!-- Logo -->
-			<div>
-				<img src="./resources/logo.png" alt="">
+			<div class="col-span-2">
+				<img class="mx-auto" src="./resources/logo.png" alt="">
 			</div>	
 
 			<!-- Button -->
-			<div>
+			<div class="max-md:mx-auto">
 				<button id="sort-by-view" class="btn px-5 py-2 bg-custom-grey-1 normal-case text-custom-black text-lg font-medium">Sort By View</button>
 			</div>
 
 			<!-- QnA Blog -->
-			<div class="btn font-medium hover:bg-custom-red text-white  border-custom-red text-lg px-5 py-2 normal-case bg-custom-red">Blog</div>
+			<div class="max-md:mx-auto">
+				<button class="btn font-medium hover:bg-custom-red text-white  border-custom-red text-lg px-5 py-2 normal-case bg-custom-red">Blog</button>
+			</div>
 		</section>
 		<hr class="border-custom-grey-1">
 	</header>
@@ -57,7 +59,7 @@
 	<main class="container mx-auto">
 
 		<!-- Category Buttons -->
-		<section class="flex justify-center gap-6 mt-8">
+		<section class="flex flex-wrap mx-4 justify-center gap-6 mt-8">
 
 			<div><button id="all-button" class="btn normal-case font-medium active">All</button></div>
 			<div><button id="music-button" class="btn normal-case font-medium">Music</button></div>
@@ -74,7 +76,7 @@
 		<!-- Contents -->
 		<section class="mt-10">
 			<!-- Cards Container -->
-			<div id="cards-container" class="grid grid-cols-4 gap-6"></div>
+			<div id="cards-container" class="grid md:grid-cols-2 sm:grid-cols-1 mx-4 lg:grid-cols-4 gap-6"></div>
 		</section>
 	</main>
 
