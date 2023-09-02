@@ -3,6 +3,7 @@ const allBtn = document.getElementById("all-button");
 const musicBtn = document.getElementById("music-button");
 const comedyBtn = document.getElementById("comedy-button");
 const drawingBtn = document.getElementById("drawing-button");
+const sortBtn = document.getElementById("sort-by-view");
 const btnArr = [allBtn, musicBtn, comedyBtn, drawingBtn];
 
 // Initializing Card Container
@@ -37,7 +38,19 @@ async function fetchDataAPI(id) {
 		err.classList.add("hidden");
 		const data = resource.data;
 		displayCard(data);
+
+		// Adding functionality to sort-by-view button
+		addSortByViewEvent(data);
 	}
+}
+
+// Adding event on sort-by-view button
+function addSortByViewEvent(data) {
+	sortBtn.addEventListener("click", () => {
+		data.sort((a, b) => parseFloat(b.others.views) - parseFloat(a.others.views));
+		cardContainer.innerHTML = '';
+		if(document.getElementById("error").classList.contains("hidden")) displayCard(data);
+	})
 }
 
 // Adding button functionality
@@ -83,17 +96,10 @@ function addBtnEvents(data) {
 	}
 }
 
+
+
 function displayCard(dataList) {
 	dataList.forEach(data => {
-		// console.log(data.category_id);
-		// console.log(data.thumbnail);
-		// console.log(data.title);
-		// console.log(data.authors[0].profile_picture);
-		// console.log(data.authors[0].profile_name);
-		// console.log(data.authors[0].verified);
-		// console.log(data.others.views);
-		// console.log(data.others.posted_date);
-		
 		// Converting Seconds to hours and minutes
 		const sec = data.others.posted_date;
 		let min = Math.floor(sec / 60);
