@@ -111,7 +111,7 @@ function displayCard(dataList) {
 		<div class="card bg-base-100">
 					<!-- Video -->
 					<figure class="rounded-lg relative h-[200px]">
-						<img src="${data.thumbnail}" class="h-full w-full object-cover" alt="Shoes" />
+						<img src="${data.thumbnail}" class="h-full w-full object-cover" alt="" />
 						<div class="absolute bg-custom-black-2 bottom-3 p-1 right-3 text-white text-[10px] rounded-[4px] ${sec ? "block" : "hidden"}">${hours}hrs ${min}mins ago</div>
 					</figure>
 
