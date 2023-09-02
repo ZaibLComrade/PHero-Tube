@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/active.css">
+	<style>
+		.font-inter {
+			font-family: "Inter", sans-serif;
+		}
+		.font-mono {
+			font-family: 'Roboto Mono', monospace;
+		}
+		.font-montserrat {
+			font-family: 'Montserrat', sans-serif;
+		}
+	</style>
+	<script>
+    tailwind.config = {	
+		theme: {
+			extend: {
+				colors: {
+					"custom-violet": "#5A1F3D",
+				}
+			}
+		}
+    }
+	</script>
+
+	<title>Blog</title>
+</head>
+<body class="bg-[#FFF4FF] font-inter">
+	<header class="bg-custom-violet">
+		<h1 class="mx-auto text-white w-max py-8 text-5xl">Blog</h1>
+	</header>
+	<main class="container mx-auto text-2xl pt-6 space-y-6">
+		<h1 class="py-5 w-max mx-auto text-4xl">Q&A</h1>
+		<!-- Question 1 -->
+		<section class="bg-[#F4F0FF] p-4 rounded-xl">
+			<h2>Q: Discuss the scope of <span class="font-mono font-semibold text-custom-violet">var</span>, <span class="font-mono font-semibold text-custom-violet">let</span> and <span class="font-mono font-semibold text-custom-violet">const</span>.</h2>	
+			<div class="space-y-2 py-4 text-xl">
+				<p>=> <span class="font-bold font-mono">var</span>, <span class="font-bold font-mono">let</span> and <span class="font-bold font-mono">const</span> are keywords used to declare variables in JavaScript. Among which, <span class="font-bold font-mono">var</span> is the oldest way to declare variables. <span class="font-bold font-mono">var</span> has a scope of functional and global level.Variables declared with <span class="font-bold font-mono">var</span> keyword outside any function are global-scoped meaning they are accessible throughout any part of the code. whearas if declared within a function, the variable becomes accessible from any part of the function but not outside the function-scope. <span class="font-bold font-mono">var</span> keyword hoists the variable to the top of it's scope initializing with the value "undefined" making the variable accessible even before declaration"</p>
+				<p><span class="font-bold font-mono">let</span> and <span class="font-bold font-mono">const</span> keywords were introduced in ES6 which are comparetively new. Both has the scope of block-level. variables declared with <span class="font-bold font-mono">let</span> or <span class="font-bold font-mono">const</span> are accessible from only the code block. The block can be functions, if...else statements or loops. They can also be global-scoped. The outer scope of the block does not have access to the variables. Both <span class="font-bold font-mono">let</span> and <span class="font-bold font-mono">const</span> keywords are hoisted at the top of the block too. But are not initialized before declaration which causes in a reference error when trying to access before declaration.</p>
+			</div>
+		</section>
+
+		<!-- Question 2 -->
+		<section class="bg-[#F4F0FF] p-4 rounded-xl">
+			<h2>Q: Tell us the use cases of <span class="font-mono font-semibold text-custom-violet">null</span> and <span class="font-mono font-semibold text-custom-violet">undefined</span></h2>		
+			<div class="space-y-2 py-4 text-xl">
+				<p>
+					=> <span class="font-bold font-mono">null</span> and <span class="font-bold font-mono">undefined</span> are both used to indicate absence of value in JavaScript. While <span class="font-bold font-mono">undefined</span> is the default implicit value of a variable without a value, <span class="font-bold font-mono">null</span> is more of an inteded value for variables that should not have any value.	<span class="font-bold font-mono">undefined</span> is mostly usded as a value by the program for uninitialized variables, functions that are called with fewer arguments than it is expected or when functions do not have an explicit return or accessing object properties that do not exist.
+				</p>	
+				<p>
+					Despite of having fewer distinction with <span class="font-bold font-mono">undefined</span>, <span class="font-bold font-mono">null</span> is used to intentionally indicate the emptiness of a variable. It's also used to reset variable values when the variable sould not contain any value.
+				</p>
+			</div>
+		</section>
+
+		<!-- Question 3 -->
+		<section class="bg-[#F4F0FF] p-4 rounded-xl">
+			<h2>Q: What do you mean by REST API?</h2>	
+			<p class="space-y-2 py-4 text-xl">
+				=> REST API or Representational State Transfer Application Programming Interface is a set of rules and conventions for interactions of web services as well as for building them. REST is an architectural style that simplifies software components communication over the internet. Resources are represented as objects in REST and standard HTTP methods like GET, POST, PUT and DELETE are used to perform actions on these resources. Data is often exchanged in formats like JSON and XML. The request from  client to server contains all necessary information to understand the request which simplifies the process. HTTP status code like 200(OK), 404(Not found) are used to indicate the outcome of it's request. The main reason for its usage in web development is it's simplicity and scalability, as well as the fact that the APIs are accessible by various clients including web browsers, mobile apps and other software applications.
+			</p>
+		</section>
+	</main>
+</body>
+</html>
